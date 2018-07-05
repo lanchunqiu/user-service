@@ -77,26 +77,26 @@ public class UserCoreServiceImpl implements IUserCoreService {
             Claims claims = JwtTokenUtils.phaseToken(request.getToken());
             response.setUid(claims.get("uid").toString());
             response.setCode(ResponseCodeEnum.SUCCESS.getCode());
-            response.setCode(ResponseCodeEnum.SUCCESS.getMsg());
+            response.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
         } catch (ExpiredJwtException e){
             Log.error("Expire:" + e);
             response.setCode(ResponseCodeEnum.TOKEN_EXPIRE.getCode());
-            response.setCode(ResponseCodeEnum.TOKEN_EXPIRE.getMsg());
+            response.setMsg(ResponseCodeEnum.TOKEN_EXPIRE.getMsg());
         } catch (SignatureException e){
             Log.error("Expire:" + e);
             response.setCode(ResponseCodeEnum.SIGNATURE_ERROR.getCode());
-            response.setCode(ResponseCodeEnum.SIGNATURE_ERROR.getMsg());
+            response.setMsg(ResponseCodeEnum.SIGNATURE_ERROR.getMsg());
         } catch (Exception e){
             Log.error("login occur exception:" + e);
             ServiceException serviceException = (ServiceException) ExceptionUtil.handlerException4biz(e);
             response.setCode(serviceException.getErrorCode());
-            response.setCode(serviceException.getErrorMessage());
+            response.setMsg(serviceException.getErrorMessage());
         } finally {
             Log.info("response->" + response);
         }
 
 
-        return null;
+        return response;
     }
 
     private void beforeValidate(UserLoginRequest request){

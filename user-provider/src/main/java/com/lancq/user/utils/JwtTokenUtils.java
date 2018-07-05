@@ -20,7 +20,7 @@ import java.util.Map;
 public class JwtTokenUtils {
     private static Key generatorKey(){
         SignatureAlgorithm sa = SignatureAlgorithm.HS256;
-        byte[] bin = DatatypeConverter.parseBase64Binary("abc");
+        byte[] bin = DatatypeConverter.parseBase64Binary("abcdefg");
         Key key = new SecretKeySpec(bin,sa.getJcaName());
         return key;
     }
@@ -43,5 +43,9 @@ public class JwtTokenUtils {
     public static Claims phaseToken(String token){
         Jws<Claims> claimsJws = Jwts.parser().setSigningKey(generatorKey()).parseClaimsJws(token);
         return claimsJws.getBody();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(generatorKey());
     }
 }
