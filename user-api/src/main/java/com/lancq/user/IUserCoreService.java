@@ -1,5 +1,7 @@
 package com.lancq.user;
 
+import com.lancq.user.dto.CheckAuthRequest;
+import com.lancq.user.dto.CheckAuthResponse;
 import com.lancq.user.dto.UserLoginRequest;
 import com.lancq.user.dto.UserLoginResponse;
 
@@ -10,4 +12,6 @@ import com.lancq.user.dto.UserLoginResponse;
  **/
 public interface IUserCoreService {
     UserLoginResponse login(UserLoginRequest request);
+
+    CheckAuthResponse validToken(CheckAuthRequest request);
 }
