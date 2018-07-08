@@ -1,4 +1,4 @@
-package com.lancq.user;
+package com.lancq.user.constants;
 
 /**
  * @Author lancq

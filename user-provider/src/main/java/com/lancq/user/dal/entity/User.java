@@ -1,5 +1,7 @@
 package com.lancq.user.dal.entity;
 
+import java.util.Date;
+
 /**
  * @Author lancq
  * @Description
@@ -14,7 +16,7 @@ public class User {
     private String mobile;
     private String sex;
     private int status;
-    private String create_time;
+    private Date create_time;
 
     public int getId() {
         return id;
@@ -80,11 +82,11 @@ public class User {
         this.status = status;
     }
 
-    public String getCreate_time() {
+    public Date getCreate_time() {
         return create_time;
     }
 
-    public void setCreate_time(String create_time) {
+    public void setCreate_time(Date create_time) {
         this.create_time = create_time;
     }
 

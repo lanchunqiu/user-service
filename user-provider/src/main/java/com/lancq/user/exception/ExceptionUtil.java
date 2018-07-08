@@ -1,6 +1,6 @@
 package com.lancq.user.exception;
 
-import com.lancq.user.ResponseCodeEnum;
+import com.lancq.user.constants.ResponseCodeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
