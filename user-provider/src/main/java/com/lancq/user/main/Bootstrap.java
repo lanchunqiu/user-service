@@ -7,7 +7,7 @@ import com.alibaba.dubbo.container.Main;
  * @Description
  * @Date 2018/7/1
  **/
-public class Bootsrap {
+public class Bootstrap {
     public static void main(String[] args) {
         Main.main(args);
     }
